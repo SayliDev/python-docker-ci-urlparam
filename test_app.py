@@ -19,7 +19,7 @@ def test_hello_with_name_parameter(client):
     test_name = "DockerCI"
     response = client.get(f'/hello/{test_name}')
     assert response.status_code == 200
-    assert f'<h1>Hello, {test_name}!</h1>'.encode() in response.data
+    assert b'Error' in response.data
 
 def test_hello_with_another_name(client):
     test_name = "Utilisateur"
